@@ -6,7 +6,7 @@
 // va applicato uno sconto del 40% per gli over 65.
 // L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo).
 
-
+/*
 // chiediamo all'utente la sua etá
 const userAge = parseInt(prompt('inserisci la tua etá'))
 console.log("etá dell'utente: " + userAge);
@@ -44,4 +44,28 @@ else if (userAge > 65) {
 else {
     alert('il tuo biglietto costerá: ' + baseTicketPrice + ' €')
 }
+*/
 
+const trainPriceform = document.querySelector('form');
+
+// variabili input dell'utente
+const nomeUtente = document.getElementById('userName');
+const distanza = document.getElementById('distance');
+const ageGroup = document.getElementById('ageGroup');
+
+// variabili output
+const userNameSent = document.getElementById('userNameSent');
+const distanceSent = document.getElementById('distanceSent');
+const ageGroupSent = document.getElementById('ageGroup');
+
+const generate = document.querySelector('button');
+console.log(nomeUtente.value);
+
+trainPriceform.addEventListener('submit', 
+    function(event) {
+        event.preventDefault();
+        userNameSent.innerHTML = nomeUtente.value;
+        distanceSent.innerHTML = distanza.value;
+        ageGroupSent.innerHTML = ageGroup.value;
+    }
+)
