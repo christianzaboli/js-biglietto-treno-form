@@ -6,46 +6,8 @@
 // va applicato uno sconto del 40% per gli over 65.
 // L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo).
 
-/*
-// chiediamo all'utente la sua etá
-const userAge = parseInt(prompt('inserisci la tua etá'))
-console.log("etá dell'utente: " + userAge);
 
-// chiediamo all'utente quanti km deve percorrere
-const userKm = parseInt(prompt('Quanti Chilometri devi percorrere?'))
-console.log("Distanza in Km da percorrere: " + userKm);
-
-// variabili necessarie per continuare il programma
-const kmTariff = 0.21;
-const underageDiscount = ((100 - 20) / 100);
-const elderlyDiscount = ((100 - 40) / 100);
-
-let discountTicketPrice;
-
-// check di quanto costerá il biglietto senza sconti
-let baseTicketPrice = ((userKm * kmTariff)).toFixed(2);
-console.log('Costo del biglietto: ' + baseTicketPrice + ' €');
-
-// applichiamo uno sconto del 20% nel caso dovesse essere minorenne
-if (userAge < 18)  {
-    let discountTicketPrice = (underageDiscount * baseTicketPrice).toFixed(2)
-    console.log("Costo del biglietto con sconto giovani applicato " + discountTicketPrice + ' €');
-    alert('il tuo biglietto costerá: ' + discountTicketPrice + ' €')
-} 
-
-// applichiamo uno sconto del 40% nel caso dovesse essere over 65
-else if (userAge > 65) {
-    let discountTicketPrice = (elderlyDiscount * baseTicketPrice).toFixed(2)
-    console.log("Costo del biglietto con sconto anziani applicato " + discountTicketPrice + ' €')
-    alert('il tuo biglietto costerá: ' + discountTicketPrice + ' €')
-}
-
-// infine il biglietto nel resto dei casi
-else {
-    alert('il tuo biglietto costerá: ' + baseTicketPrice + ' €')
-}
-*/
-
+// variabili statiche
 const trainPriceform = document.querySelector('form');
 
 // variabili input dell'utente
@@ -56,16 +18,37 @@ const ageGroup = document.getElementById('ageGroup');
 // variabili output
 const userNameSent = document.getElementById('userNameSent');
 const distanceSent = document.getElementById('distanceSent');
-const ageGroupSent = document.getElementById('ageGroup');
+const ageGroupSent = document.getElementById('ageGroupSent');
+const ticketPrice = document.getElementById('ageGroupSent')
+console.log(ageGroupSent);
 
-const generate = document.querySelector('button');
-console.log(nomeUtente.value);
+// variabili necessarie per il calcolo del biglietto
+// calcolo biglietto
 
+
+// output finale 
 trainPriceform.addEventListener('submit', 
     function(event) {
         event.preventDefault();
         userNameSent.innerHTML = nomeUtente.value;
         distanceSent.innerHTML = distanza.value;
-        ageGroupSent.innerHTML = ageGroup.value;
+        ageGroupSent.innerHTML = parseInt(ageGroup.value);
+        
+        const kmTariff = 0.21;
+        let baseTicketPrice = ((parseInt(distanceSent.value) * kmTariff)).toFixed(2);
+        const underageDiscount = ((100 - 20) / 100);
+        const elderlyDiscount = ((100 - 40) / 100);
+        let finalTicket = document.getElementById('ticketPrice')
+        if (ageGroupSent === 10)  {
+            finalTicket.innerHTML = (underageDiscount * baseTicketPrice)
+        } else if (ageGroupSent === 100) {
+            finalTicket.innerHTML = (elderlyDiscount * baseTicketPrice)
+        } else {
+            finalTicket.innerHTML = (baseTicketPrice)
+        }
+        console.log(ageGroupSent);
+        console.log(finalTicket);
+        console.log(ticketPrice);
+        
     }
 )
