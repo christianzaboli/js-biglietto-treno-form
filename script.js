@@ -35,7 +35,9 @@ trainPriceform.addEventListener('submit',
         ageGroupSent.innerHTML = parseInt(ageGroup.value);
         
         const kmTariff = 0.21;
-        let baseTicketPrice = ((parseInt(distanceSent.value) * kmTariff)).toFixed(2);
+        let baseTicketPrice = ((parseInt(distanceSent.innerText) * kmTariff)).toFixed(2);
+        console.log('baseprice', baseTicketPrice);
+        
         const underageDiscount = ((100 - 20) / 100);
         const elderlyDiscount = ((100 - 40) / 100);
         let finalTicket = document.getElementById('ticketPrice')
@@ -46,8 +48,8 @@ trainPriceform.addEventListener('submit',
         } else {
             finalTicket.innerHTML = (baseTicketPrice)
         }
-        console.log(ageGroupSent);
-        console.log(finalTicket);
+        console.log('etá', ageGroupSent);
+        console.log('prezzofinale',finalTicket);
         console.log(ticketPrice);
         
     }
