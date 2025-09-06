@@ -20,37 +20,37 @@ const userNameSent = document.getElementById('userNameSent');
 const distanceSent = document.getElementById('distanceSent');
 const ageGroupSent = document.getElementById('ageGroupSent');
 const ticketPrice = document.getElementById('ageGroupSent')
-console.log(ageGroupSent);
+const finalTicket = document.getElementById('ticketPrice')
 
-// variabili necessarie per il calcolo del biglietto
-// calcolo biglietto
-
+// variabili utili per la funzione del calcolo del biglietto
+const kmTariff = 0.21;
 
 // output finale 
 trainPriceform.addEventListener('submit', 
     function(event) {
+        
+        // prevent di reset della pagina al submit
         event.preventDefault();
+        
+        // output dettaglio del passeggero
         userNameSent.innerHTML = nomeUtente.value;
         distanceSent.innerHTML = distanza.value;
         ageGroupSent.innerHTML = parseInt(ageGroup.value);
         
-        const kmTariff = 0.21;
-        let baseTicketPrice = ((parseInt(distanceSent.innerText) * kmTariff)).toFixed(2);
-        console.log('baseprice', baseTicketPrice);
-        
+        // if else calcolo prezzo
         const underageDiscount = ((100 - 20) / 100);
         const elderlyDiscount = ((100 - 40) / 100);
-        let finalTicket = document.getElementById('ticketPrice')
-        if (ageGroupSent === 10)  {
+        let baseTicketPrice = ((parseInt(distanceSent.innerText) * kmTariff)).toFixed(2);
+        if (ageGroupSent.innerText === '10')  {
             finalTicket.innerHTML = (underageDiscount * baseTicketPrice)
-        } else if (ageGroupSent === 100) {
+        } else if (ageGroupSent.innerText === '100') {
             finalTicket.innerHTML = (elderlyDiscount * baseTicketPrice)
         } else {
             finalTicket.innerHTML = (baseTicketPrice)
         }
-        console.log('etá', ageGroupSent);
-        console.log('prezzofinale',finalTicket);
-        console.log(ticketPrice);
+
+        console.log('base',baseTicketPrice);
+        console.log('final',finalTicket);
         
     }
 )

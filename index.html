@@ -11,24 +11,38 @@
     <title>Biglietto del treno Form</title>
 </head>
 <body>
-    <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+    <main>
+        <div class="container">
 
-    <!-- input utente -->
-    <form>
-        <label for="userName">Nome Cognome</label>
-        <input type="userName"placeholder="Inserisci il tuo nome" id="userName">
-        <label for="km-distance">Km da percorrere</label>
-        <input type="number"placeholder="Distanza da percorrere" id="distance">
-        <label for="age-group">Fascia d'etá</label>
-        <select name="age-group-selection" id="ageGroup">
-            <option value="">Etá</option>
-            <option value="10">Minorenne</option>
-            <option value="50">Maggiorenne</option>
-            <option value="100">Over 65</option>
-        </select>
-        <!-- tasti di generazione/reload pagina -->
-        <button>Genera</button>
-        <button>Annulla</button>
+            <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+
+            <!-- input utente -->
+            <form class="row">
+                <div class="col-3">
+                    <label for="userName">Nome Cognome</label>
+                    <input type="userName"placeholder="Inserisci il tuo nome" id="userName" required>
+                </div>
+                <div class="col-3">
+                    <label for="distance">Km da percorrere</label>
+                    <input type="number"placeholder="Distanza da percorrere" id="distance" required>
+                    
+                </div>
+                <div class="col-3">
+                    <label for="ageGroup">Fascia d'etá</label>
+                    <select name="age-group-selection" id="ageGroup" required>
+                        <option value="10">Minorenne</option>
+                        <option value="50">Maggiorenne</option>
+                        <option value="100">Over 65</option>
+                    </select>
+                    
+                </div>        
+                <!-- tasti di generazione/reload pagina -->
+                <div class="col-12">
+                    <button>Genera</button>
+                    <button>Annulla</button>
+                </div>
+            </div>
+        </main>
     </form>
 
 
