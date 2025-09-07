@@ -12,44 +12,67 @@
 </head>
 <body>
     <main>
-        <div class="container">
+            <div class="container">
+                <!-- input utente -->
+                <h1 class="text-center">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+                    <form class="row p-4 text-center rounded-4">
+                            
+                        <div class="col mx-auto py-4 row text-center">
+                            <label class="mb-1" for="userName">Nome Cognome</label>
+                            <input class="text-center form-control-sm" type="userName"placeholder="Inserisci il tuo nome" id="userName" required>
+                        </div>
+                        <div class="col mx-auto py-4 row text-center">
+                            <label class="mb-1" for="distance">Km da percorrere</label>
+                            <input class="text-center form-control-sm" type="number"placeholder="Distanza" id="distance" required>        
+                        </div>
+                        <div class="col mx-auto py-4 row text-center">
+                            <label class="mb-1" for="ageGroup">Fascia d'etá</label>
+                            <select class="text-center form-control-sm" name="age-group-selection" id="ageGroup" required>
+                                <option value="Minorenne">Minorenne</option>
+                                <option value="Maggiorenne">Maggiorenne</option>
+                                <option value="Anziani">Over 65</option>
+                            </select>
+                        </div>
+                                
+                        <!-- tasti di generazione/reload pagina -->
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="submit">Genera</button>
+                            <button class="btn btn-primary">Annulla</button>
+                        </div>    
 
-            <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+                    </form>
+                    <div>
+                        <h1 class="mt-5 text-center">IL TUO BIGLIETTO</h1>
+                        <div class="row myBox">
+                            <div class="col-12 row border border-black">
 
-            <!-- input utente -->
-            <form class="row">
-                <div class="col-4 ">
-                    <label for="userName">Nome Cognome</label>
-                    <input type="userName"placeholder="Inserisci il tuo nome" id="userName" required>
-                </div>
-                <div class="col-4">
-                    <label for="distance">Km da percorrere</label>
-                    <input type="number"placeholder="Distanza da percorrere" id="distance" required>
-                    
-                </div>
-                <div class="col-4">
-                    <label for="ageGroup">Fascia d'etá</label>
-                    <select name="age-group-selection" id="ageGroup" required>
-                        <option value="10">Minorenne</option>
-                        <option value="50">Maggiorenne</option>
-                        <option value="100">Over 65</option>
-                    </select>
-                    
-                </div>        
-                <!-- tasti di generazione/reload pagina -->
-                <div class="col-12">
-                    <button>Genera</button>
-                    <button>Annulla</button>
-                </div>
+                                <div class="col-3 p-3">
+                                    <h3>NOME PASSEGGERO</h3>
+                                    <p id="userNameSent">xxuser</p>
+                                </div>
+                                <div class="col row">
+                                    <h5>Offerta</h5>
+                                    <p id="ageGroupSent">xxage</p>
+                                </div>
+                                <div class="col row">
+                                    <h5>Carrozza</h5>
+
+                                </div>
+                                <div class="col row">
+                                    <h5>Codice CP</h5>
+
+                                </div>
+                                <div class="col row">
+                                    <h5>Costo biglietto</h5>
+                                    <p id="ticketPrice">xxprice</p>   
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
             </div>
-        </main>
-    </form>
-
-
-    <p id="userNameSent"></p>
-    <p id="distanceSent"></p>
-    <p id="ageGroupSent"></p>
-    <p id="ticketPrice"></p>
+    </main>
+    
     <script src="script.js"></script>
 </body>
 </html>

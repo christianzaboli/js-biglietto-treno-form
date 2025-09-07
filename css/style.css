@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 form {
-    background-color: red;
-    padding: 30px auto
+height: 250px;
+/* debug color */
+background-color: aqua;
+}
+.myBox {
+    height: 250px;
+
+    /* debug color */
+    background-color: aqua;
 }
