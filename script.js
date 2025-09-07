@@ -42,15 +42,12 @@ trainPriceform.addEventListener('submit',
         const elderlyDiscount = ((100 - 40) / 100);
         let baseTicketPrice = ((parseInt(distanceSent.innerText) * kmTariff)).toFixed(2);
         if (ageGroupSent.innerText === '10')  {
-            finalTicket.innerHTML = (underageDiscount * baseTicketPrice)
+            finalTicket.innerHTML = (underageDiscount * baseTicketPrice).toFixed(2)
         } else if (ageGroupSent.innerText === '100') {
-            finalTicket.innerHTML = (elderlyDiscount * baseTicketPrice)
+            finalTicket.innerHTML = (elderlyDiscount * baseTicketPrice).toFixed(2)
         } else {
-            finalTicket.innerHTML = (baseTicketPrice)
+            finalTicket.innerHTML = (parseInt(baseTicketPrice).toFixed(2)) + '€'
         }
-
-        console.log('base',baseTicketPrice);
-        console.log('final',finalTicket);
         
     }
 )
