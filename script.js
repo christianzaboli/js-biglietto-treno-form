@@ -9,7 +9,7 @@
 
 // variabili statiche
 const trainPriceform = document.querySelector('form');
-
+const annulla = document.getElementById('annulla');
 // variabili input dell'utente
 const nomeUtente = document.getElementById('userName');
 const distanza = document.getElementById('distance');
@@ -19,8 +19,11 @@ const ageGroup = document.getElementById('ageGroup');
 const userNameSent = document.getElementById('userNameSent');
 const distanceSent = document.getElementById('distanceSent');
 const ageGroupSent = document.getElementById('ageGroupSent');
-const ticketPrice = document.getElementById('ageGroupSent')
-const finalTicket = document.getElementById('ticketPrice')
+const ticketPrice = document.getElementById('ageGroupSent');
+const finalTicket = document.getElementById('ticketPrice');
+const randomCarrozza = document.getElementById('randomCarrozza');
+const randonCP = document.getElementById('randomCP');
+const result = document.getElementById('result').classList;
 
 // variabili utili per la funzione del calcolo del biglietto
 const kmTariff = 0.21;
@@ -28,14 +31,16 @@ const kmTariff = 0.21;
 // output finale 
 trainPriceform.addEventListener('submit', 
     function(event) {
-        
         // prevent di reset della pagina al submit
         event.preventDefault();
         
         // output dettaglio del passeggero
         userNameSent.innerHTML = nomeUtente.value;
-        const distanceCalc = distanza.value;
         ageGroupSent.innerHTML = ageGroup.value;
+        randomCarrozza.innerHTML = Math.floor(Math.random() * 7) + 1;
+        randonCP.innerHTML = Math.floor(Math.random() * 99999);
+        const distanceCalc = distanza.value;
+        result.remove('d-none');
         
         // if else calcolo prezzo
         const underageDiscount = ((100 - 20) / 100);
@@ -49,5 +54,12 @@ trainPriceform.addEventListener('submit',
             finalTicket.innerHTML = baseTicketPrice.toFixed(2) + '€';
         }
         
+    }
+)
+
+// tasto annulla
+annulla.addEventListener('click',
+    function() {
+        location.reload()
     }
 )

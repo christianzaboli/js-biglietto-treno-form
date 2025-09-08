@@ -10,12 +10,12 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Biglietto del treno Form</title>
 </head>
-<body>
+<body class="text-black">
     <main>
-            <div class="container">
+            <div class="container mt-5">
                 <!-- input utente -->
-                <h1 class="text-center">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
-                    <form class="row p-4 text-center rounded-4">
+                <h1 class="text-center text-light">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+                    <form class="row p-4 text-center rounded-4 shadow">
                             
                         <div class="col mx-auto py-4 row text-center">
                             <label class="mb-1" for="userName">Nome Cognome</label>
@@ -37,37 +37,36 @@
                         <!-- tasti di generazione/reload pagina -->
                         <div class="col-12">
                             <button class="btn btn-primary" type="submit">Genera</button>
-                            <button class="btn btn-primary">Annulla</button>
+                            <button class="btn btn-primary" id="annulla">Annulla</button>
                         </div>    
 
                     </form>
-                    <div>
-                        <h1 class="mt-5 text-center">IL TUO BIGLIETTO</h1>
-                        <div class="row myBox">
-                            <div class="col-12 row border border-black">
+                    <div class="d-none" id="result">
+                        <h1 class="mt-5 text-center text-light">IL TUO BIGLIETTO</h1>
+                        <div class="row myBox rounded-4 gx-2 shadow">
 
-                                <div class="col-3 p-3">
+                                <div class="col-3 row p-5 rounded-start-4 gx-2 myColor">
                                     <h3>NOME PASSEGGERO</h3>
-                                    <p id="userNameSent">xxuser</p>
+                                    <p id="userNameSent">USER PLACEHOLDER</p>
                                 </div>
-                                <div class="col row">
+                                <div class="col row p-5 gx-2">
                                     <h5>Offerta</h5>
-                                    <p id="ageGroupSent">xxage</p>
+                                    <p id="ageGroupSent">OFFER PLACEHOLDER</p>
                                 </div>
-                                <div class="col row">
+                                <div class="col row p-5 gx-2">
                                     <h5>Carrozza</h5>
-
+                                    <p id="randomCarrozza">NUM</p>
                                 </div>
-                                <div class="col row">
+                                <div class="col row p-5 gx-2">
                                     <h5>Codice CP</h5>
+                                    <p id="randomCP">NUM</p>
 
                                 </div>
-                                <div class="col row">
+                                <div class="col row p-5 gx-2 ">
                                     <h5>Costo biglietto</h5>
-                                    <p id="ticketPrice">xxprice</p>   
+                                    <p id="ticketPrice">PRICE PLACEHOLDER</p>   
                                 </div>
 
-                            </div>
                         </div>
                     </div>
             </div>

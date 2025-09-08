@@ -3,14 +3,21 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 form {
 height: 250px;
 /* debug color */
-background-color: aqua;
+background-color: rgb(255, 255, 255);
+}
+body {
+    background-color: #0D6EFD;
 }
 .myBox {
     height: 250px;
 
     /* debug color */
-    background-color: aqua;
+    background-color: rgb(255, 255, 255);
+}
+.myColor {
+    background-color: rgb(111, 221, 169);
 }
